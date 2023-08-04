@@ -37,8 +37,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Your SQL Database connector -->
-        <!-- Replace with your chosen database's driver -->
+        <!-- SQL Database connector -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
