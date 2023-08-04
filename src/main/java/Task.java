@@ -1,49 +1,65 @@
+import java.time.LocalDateTime;
+
+// This class is to represent a task.
 public class Task {
     private String name;
-    private int priority;
-    private String deadline;
+    private String description;
+    private PriorityLevel priorityLevel;
+    private LocalDateTime deadline;
     private boolean completed;
 
-    public Task(String name, int priority, String deadline) {
-        this.name = name;
-        this.priority = priority;
-        this.deadline = deadline;
-        this.completed = false; // initially, the task is not completedd
+    public enum PriorityLevel {
+        High,
+        Medium,
+        Low
     }
 
-    //Getters
+    public Task(String name, String description, PriorityLevel priorityLevel, LocalDateTime deadline) {
+        this.name = name;
+        this.description = description;
+        this.priorityLevel = priorityLevel;
+        this.deadline = deadline;
+        this.completed = false;
+    }
 
+    // Getters and Setters
     public String getName() {
         return name;
     }
 
-    public int getPriority() {
-        return priority;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDeadline() {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public PriorityLevel getPriorityLevel() {
+        return priorityLevel;
+    }
+
+    public void setPriorityLevel(PriorityLevel priorityLevel) {
+        this.priorityLevel = priorityLevel;
+    }
+
+    public LocalDateTime getDeadline() {
         return deadline;
+    }
+
+    public void setDeadline(LocalDateTime deadline) {
+        this.deadline = deadline;
     }
 
     public boolean isCompleted() {
         return completed;
     }
 
-    // Setters
-
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
-    //toString method to print task details
-    @Override
-    public String toString() {
-        return "Task{" +
-                "name" + name + '\'' +
-                ", priority=" + priority +
-                ", deadline='" + deadline +'\'' +
-                ", completed=" + completed +
-                '}';
+    public void markAsCompleted() {
+        this.completed = true;
     }
 }
