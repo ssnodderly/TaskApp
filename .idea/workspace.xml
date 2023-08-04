@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d44641-50de-4092-90b4-281386419882" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/AuthentictionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TaskListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TaskManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TaskTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TaskApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TaskApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TaskManagerImplTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691184353974</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated with a different idea of how I want to go with this program.">
+      <created>1691185494307</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691185494307</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
