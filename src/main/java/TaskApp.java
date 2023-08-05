@@ -75,15 +75,41 @@ public class TaskApp {
             switch (option) {
                 case "1":
                     // Implement create task functionality here
+                    System.out.println("Enter task name");
+                    String taskName = scanner.nextLine();
+                    System.out.println("Enter task priority (LOW, MEDIUM, HIGH):");
+                    String taskPriority = scanner.nextLine();
+                    System.out.println("Enter task deadline (mm-dd-yyyy):");
+                    String taskDeadline = scanner.nextLine();
+                    System.out.println("Enter task description:");
+                    String taskDescription = scanner.nextLine();
+                    taskManager.createTask(username, taskName, taskPriority, taskDeadline, taskDescription);
+                    System.out.println("Task created successfully!");
                     break;
                 case "2":
                     // Implement view tasks functionality here
+                    System.out.println("Here are your tasks:");
+                    taskManager.viewTasks(username).forEach(task -> System.out.println(task.toString()));
                     break;
                 case "3":
                     // Implement edit task functionality here
+                    System.out.println("Enter task name to edit:");
+                    String taskNameToEdit = scanner.nextLine();
+                    System.out.println("Enter new task priority (LOW, MEDIUM, HIGH):");
+                    String newTaskPriority = scanner.nextLine();
+                    System.out.println("Enter new task deadline (mm-dd-yyyy):");
+                    String newTaskDeadline = scanner.nextLine();
+                    System.out.println("Enter new task description:");
+                    String newTaskDescription = scanner.nextLine();
+                    taskManager.editTask(username, taskNameToEdit, newTaskPriority, newTaskDeadline, newTaskDescription);
+                    System.out.println("Task edited successfully!");
                     break;
                 case "4":
                     // Implement delete task functionality here
+                    System.out.println("Enter task name to delete:");
+                    String taskNameToDelete = scanner.nextLine();
+                    taskManager.deleteTask(username, taskNameToDelete);
+                    System.out.println("Task deleted successfully!");
                     break;
                 case "5":
                     return;

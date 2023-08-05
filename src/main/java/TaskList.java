@@ -64,4 +64,23 @@ public class TaskList {
     public User getOwner() {
         return owner;
     }
+
+    public Task getTask(String taskNameToEdit) {
+        return tasks.stream()
+                .filter(task -> task.getName().equals(taskNameToEdit))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Task not found."));
+    }
+
+    public void deleteTask(String taskNameToDelete) {
+        Optional<Task> taskToDelete = tasks.stream()
+                .filter(task -> task.getName().equals(taskNameToDelete))
+                .findFirst();
+
+        if (!taskToDelete.isPresent()) {
+            throw new IllegalArgumentException("Task not found.");
+        }
+
+        tasks.remove(taskToDelete.get());
+    }
 }

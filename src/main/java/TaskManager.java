@@ -1,9 +1,10 @@
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-
-// This class is to manage multiple task list.
 public class TaskManager {
 
     // Store users by username
@@ -11,6 +12,7 @@ public class TaskManager {
 
     // Store TaskLists by User
     private Map<User, TaskList> taskLists;
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     public TaskManager() {
         this.users = new HashMap<>();
@@ -58,5 +60,36 @@ public class TaskManager {
         }
 
         return taskLists.get(user);
+    }
+
+    public void createTask(String username, String taskName, String taskPriority, String taskDeadline, String taskDescription) {
+        User user = users.get(username);
+        TaskList taskList = taskLists.get(user);
+
+        LocalDateTime deadline = LocalDateTime.parse(taskDeadline, formatter);
+        Task newTask = new Task(taskName, taskDescription, Task.PriorityLevel.valueOf(taskPriority.toUpperCase()), deadline);
+        taskList.addTask(newTask);
+    }
+
+    public Iterable<Object> viewTasks(String username) {
+        User user = users.get(username);
+        TaskList taskList = taskLists.get(user);
+        return Collections.singleton(taskList.getTasks());
+    }
+
+    public void editTask(String username, String taskNameToEdit, String newTaskPriority, String newTaskDeadline, String newTaskDescription) {
+        User user = users.get(username);
+        TaskList taskList = taskLists.get(user);
+        Task task = taskList.getTask(taskNameToEdit);
+
+        task.setPriorityLevel(Task.PriorityLevel.valueOf(newTaskPriority.toUpperCase()));
+        task.setDeadline(LocalDateTime.parse(newTaskDeadline, formatter));
+        task.setDescription(newTaskDescription);
+    }
+
+    public void deleteTask(String username, String taskNameToDelete) {
+        User user = users.get(username);
+        TaskList taskList = taskLists.get(user);
+        taskList.removeTask(taskNameToDelete);
     }
 }

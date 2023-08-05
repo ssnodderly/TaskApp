@@ -1,12 +1,15 @@
+
 import java.time.LocalDateTime;
 
 // This class is to represent a task.
 public class Task {
+
     private String name;
     private String description;
     private PriorityLevel priorityLevel;
     private LocalDateTime deadline;
     private boolean completed;
+
 
     public enum PriorityLevel {
         High,
